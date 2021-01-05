@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react';
-import { TweenLite, Power3 } from 'gsap';
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 import './project.scss';
 
@@ -7,23 +5,6 @@ import './project.scss';
 import NextProject from '../../components/next-project';
 
 const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
-  let projectImages = useRef([]);
-	// When page is loaded, scroll to top
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-	useEffect(() => {
-		setIndex(i);
-  }, [setIndex, i]);
-  const afterLoad = (i) => {
-    TweenLite.to(projectImages.current[i], 0.5, {
-      height: '100%',
-      ease: Power3.easeInOut,
-      onComplete: () => {
-        console.log("DONE W ANIMATION")
-      }
-    })
-  }
 	return (
 		<div id="project-page">
 			<section>
@@ -72,13 +53,13 @@ const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
 									<div className="row" key={num}>
 										<div className="image-container" style={{backgroundColor: project.placeholderColor}}>
                       <LazyLoadImage
-                        ref={el => projectImages.current[num] = el}
                         alt={`${image}`}
                         scrollPosition={scrollPosition}
                         src={image}
+                        height="100%"
+                        width="100%"
                         effect="blur"
-                        threshold={0}
-                        afterLoad={() => afterLoad(num)} />
+                        threshold={0} />
 										</div>
                     <p>Desktop Preview - {num + 1}</p>
 									</div>
@@ -105,13 +86,13 @@ const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
 										<div className="image-box" key={num}>
 											<div className="box" style={{backgroundColor: project.placeholderColor}}>
                         <LazyLoadImage
-                          ref={el => projectImages.current[num + 4] = el}
                           alt={`${image}`}
                           scrollPosition={scrollPosition}
                           src={image}
+                          height="100%"
+                          width="100%"
                           effect="blur"
-                          threshold={0}
-                          afterLoad={() => afterLoad(num + 4)} />
+                          threshold={0} />
 											</div>
                       <p>Mobile Preview - {num + 1}</p>
 										</div>

@@ -10,7 +10,7 @@ export default function Nav({ setIndex, history }) {
 	let overlayRef = useRef(null);
   let inner = useRef(null);
   let iconsRef = useRef(null);
-  let footerRef = useRef(null);
+  let copyRef = useRef(null);
 	// handle animation for opening menu
 	const openMenuAnimation = () => {
 		TweenLite.to(overlayRef, 0.1, {
@@ -34,7 +34,7 @@ export default function Nav({ setIndex, history }) {
 					ease: Power2.easeInOut,
 					delay: 0.6
         })
-        TweenLite.to(footerRef, 0.8, {
+        TweenLite.to(copyRef, 0.8, {
 					opacity: 1,
 					ease: Power2.easeInOut,
 					delay: 0.6
@@ -65,7 +65,7 @@ export default function Nav({ setIndex, history }) {
 			opacity: 0,
 			ease: Power2.easeInOut
     })
-    TweenLite.to(footerRef, 0.4, {
+    TweenLite.to(copyRef, 0.4, {
 			opacity: 0,
 			ease: Power2.easeInOut
 		})
@@ -175,7 +175,7 @@ export default function Nav({ setIndex, history }) {
 						<li><a aria-label="Email" href="mailto:contact@jacobcarver.net"><i className="far fa-envelope"></i></a></li>
 						<li><a aria-label="Website" href="https://jacobcarver.net"><i className="fas fa-globe"></i></a></li>
 					</ul>
-          <p ref={el => footerRef = el}>Made With 🖤 By Jacob</p>
+          <p ref={el => copyRef = el}>&#169; Copyright 2020</p>
 				</div>
 
 			</div>

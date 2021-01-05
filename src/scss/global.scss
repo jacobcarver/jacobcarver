@@ -43,4 +43,7 @@
 
 body {
   background: #0e0e0e;
+  &.prevent-scroll {
+    overflow: hidden;
+  }
 }

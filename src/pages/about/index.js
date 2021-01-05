@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import axios from 'axios';
 import { TweenMax, TweenLite, Power1, Power3 } from 'gsap';
 import validator from 'email-validator';
 import close from '../../images/close.svg';
@@ -32,6 +33,24 @@ export default function About() {
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
 		toggleLoading(true);
+		if (captcha.length > 1 && validator.validate(email)) {
+			axios.post(API_URL, {
+				name: name,
+				email: email,
+				message: message
+			})
+			.then(() => {
+				toggleLoading(false);
+			})
+			.then(() => {
+				// close modal
+				setUserInput({ name: '', email: '', message: '' });
+				toggleModal(false);
+			})
+			.catch((error) => {
+					console.error(error);
+			});
+		}
 	}
 	// handle modal animations
 	useEffect(() => {

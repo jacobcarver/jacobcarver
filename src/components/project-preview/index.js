@@ -11,10 +11,6 @@ export default function ProjectPreview({ activeProjectIndex, history }) {
       updateIndex(activeProjectIndex);
     }, 600);
   }, [activeProjectIndex]);
-
-  const offsetColors = []
-
-  // 🛑 CHANGE PROJECT IMAGE TO NEXT PROJECT INDEX IMAGE WHEN SCROLL IS 100vh or bigger and ervert when it isnt
   return (
     <div className={styles.preview}>
       <div className={styles.preview__container}>

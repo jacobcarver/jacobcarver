@@ -1,0 +1,46 @@
+@import './reset';
+
+@font-face {
+  font-family: 'DINNextLTPro';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/DINNextLTPro-UltraLight/DINNextLTPro-UltraLight.eot'); /* IE9 Compat Modes */
+  src: local('DINNextLTPro-UltraLight'), url('../fonts/DINNextLTPro-UltraLight/DINNextLTPro-UltraLight.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../fonts/DINNextLTPro-UltraLight/DINNextLTPro-UltraLight.woff') format('woff'),
+    /* Modern Browsers */ url('../fonts/DINNextLTPro-UltraLight/DINNextLTPro-UltraLight.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../fonts/DINNextLTPro-UltraLight/DINNextLTPro-UltraLight.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'DINNextLTPro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/DINNextLTPro-Light/DINNextLTPro-Light.eot'); /* IE9 Compat Modes */
+  src: local('DINNextLTPro-Light'), url('../fonts/DINNextLTPro-Light/DINNextLTPro-Light.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../fonts/DINNextLTPro-Light/DINNextLTPro-Light.woff') format('woff'),
+    /* Modern Browsers */ url('../fonts/DINNextLTPro-Light/DINNextLTPro-Light.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../fonts/DINNextLTPro-Light/DINNextLTPro-Light.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'DINNextLTPro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/DINNextLTPro-Regular/DINNextLTPro-Regular.eot'); /* IE9 Compat Modes */
+  src: local('DINNextLTPro-Regular'), url('../fonts/DINNextLTPro-Regular/DINNextLTPro-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../fonts/DINNextLTPro-Regular/DINNextLTPro-Regular.woff') format('woff'),
+    /* Modern Browsers */ url('../fonts/DINNextLTPro-Regular/DINNextLTPro-Regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../fonts/DINNextLTPro-Regular/DINNextLTPro-Regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'DINNextLTPro';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/DINNextLTPro-Medium/DINNextLTPro-Medium.eot'); /* IE9 Compat Modes */
+  src: local('DINNextLTPro-Medium'), url('../fonts/DINNextLTPro-Medium/DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../fonts/DINNextLTPro-Medium/DINNextLTPro-Medium.woff') format('woff'),
+    /* Modern Browsers */ url('../fonts/DINNextLTPro-Medium/DINNextLTPro-Medium.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../fonts/DINNextLTPro-Medium/DINNextLTPro-Medium.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+body {
+  background: #0e0e0e;
+}

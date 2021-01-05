@@ -1,0 +1,17 @@
+.next {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 3rem;
+  color: white;
+  font-weight: 300;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .next {
+    font-size: 1.825rem;
+  }
+}

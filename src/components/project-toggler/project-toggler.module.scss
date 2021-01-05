@@ -1,0 +1,36 @@
+.toggler {
+	position: fixed;
+	right: calc(4vw * 1.5);
+	top: 50%;
+	transform: translateY(-50%);
+	height: 90px;
+	width: 35px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+  z-index: 20;
+	&__button {
+		height: 45px;
+		width: 35px;
+		display: flex;
+		align-items: center;
+    justify-content: center;
+		svg {
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+			path:first-of-type {
+				fill: white;
+        transition: all 0.4s ease-in-out;
+        stroke-width: 1;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.toggler {
+		right: calc(4vw * 1);
+	}
+}

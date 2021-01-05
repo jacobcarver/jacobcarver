@@ -1,0 +1,28 @@
+.progress {
+  position: fixed;
+	right: calc(4vw * 2.5);
+	bottom: calc(4vw * 2.5);
+	height: 60px;
+	width: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 23;
+	mix-blend-mode: difference;
+  &__circle {
+    transform: rotate(-90deg);
+		position: absolute;
+		top: 0;
+		margin-top: 0.65rem;
+    &_value {
+      stroke-dasharray: 339.292;
+		  transition: all 100ms ease-in-out;
+    }
+  }
+}
+@media screen and (min-width: 480px) {
+	.progress {
+		bottom: calc(4vw * 1);
+		right: calc(4vw * 1);
+	}
+}

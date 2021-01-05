@@ -1,0 +1,322 @@
+@import '../../scss/variables';
+
+.about {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	main {
+		.content {
+			padding: calc(4vw * 4) calc(4vw * 2) calc(4vw * 2);
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			max-width: 1400px;
+			.row {
+				padding-right: 1rem;
+				width: 100%;
+				margin-bottom: 3rem;
+				transform: translateY(100px);
+				opacity: 0;
+				h6 {
+					font-weight: 500;
+					color: white;
+          margin-bottom: 3rem;
+          font-size: calc(0.695rem * 1.5);
+				}
+				p {
+					color: #c8c8c8;
+					font-size: 0.925rem;
+					line-height: 1.8;
+					&:first-of-type {
+						margin-bottom: 1.5rem;
+					}
+				}
+			}
+			.row:nth-of-type(2) {
+				margin-bottom: 3rem;
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				h6 {
+					font-weight: 500;
+					color: white;
+					margin-bottom: 3rem;
+				}
+				.skills {
+					width: 50%;
+					min-width: 275px;
+					ul {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						width: 100%;
+						li {
+							color: #c8c8c8;
+							font-size: 0.925rem;
+							width: 50%;
+							max-width: 200px;
+							&::before {
+								content: '';
+								height: 1px;
+								width: 10px;
+								background: white;
+								margin-right: 0.5rem;
+								
+							}
+							&:nth-of-type(odd) {
+								padding: 0 1rem 1rem 0;
+							}
+							&:nth-of-type(even) {
+								padding: 0 0 1rem 1rem;
+							}
+							display: flex;
+							align-items: center;
+							position: relative;
+							line-height: 1.5;
+						}
+					}
+				}
+				.social {
+					width: 50%;
+					display: flex;
+					min-width: 275px;
+					flex-wrap: wrap;
+					.logo {
+						border: 2px solid white;
+						min-width: 75px;
+						min-height: 75px;
+						max-width: 75px;
+						max-height: 75px;
+						border-radius: 50%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin-right: 2rem;
+						svg {
+							width: 30px;
+							height: 30px;
+							path {
+								fill: white;
+							}
+						}
+					}
+					ul {
+						margin-bottom: 1rem;
+						margin-right: 2rem;
+						li {
+							display: flex;
+							align-items: center;
+              margin-bottom: 0.5rem;
+              &:hover {
+                a {
+                  text-shadow: 0px 0px 2px white;
+                }
+              }
+							a {
+								text-decoration: none;
+								color: white;
+								font-weight: 500;
+								font-size: 0.925rem;
+								margin-right: 1rem;
+								padding: 0.5rem 0;
+								display: flex;
+                align-items: center;
+                transition: all 0.4s ease-in-out;
+								span {
+									margin-left: 1rem;
+								}
+							}
+							span {
+								display: inline-block;
+								background: white;
+								height: 1px;
+								
+								width: 25px;
+							}
+							i {
+								color: white;
+								margin-left: 1rem;
+								font-size: 1.1rem;
+								font-weight: 400;
+							}
+						}
+					}
+					button {
+						font-size: 1rem;
+						color: white;
+						background: none;
+						outline: none;
+						border: 2px solid white;
+						width: 225px;
+						display: flex;
+						height: 45px;
+						align-items: center;
+						justify-content: center;
+						font-weight: 500;
+						border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            &:hover {
+              color: black;
+              background: white;
+            }
+					}
+				}
+			}
+			.profile-contact {
+				width: 100%;
+				// here
+			}
+		}
+	}
+}
+
+#modal {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: -1;
+	transition: all 0.4s ease-in-out;
+	.content {
+		background: white;
+		position: fixed;
+		left: 50%;
+		top: 70%;
+		transform: translate(-50%, -50%);
+		height: 100%;
+		width: 100%;
+		max-width: 600px;
+		max-height: 500px;
+		padding: 1.5rem;
+		overflow-y: scroll;
+    border-radius: 4px;
+    z-index: 1000;
+		.loading {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background: rgba(0, 0, 0, 0.5);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				height: 50px;
+				width: 50px;
+			}
+		}
+		img.close {
+			position: absolute;
+			right: 0.5rem;
+			top: 0.5rem;
+			height: 34px;
+			width: 34px;
+			padding: 0.25rem;
+			cursor: pointer;
+		}
+		h1 {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+      font-weight: 500;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 1.5rem;
+			input, textarea, button {
+				outline: none;
+				border: none;
+				font-size: 1rem;
+				max-height: 150px;
+				border-radius: 4px;
+			}
+			textarea {
+				max-width: calc(100% - 1.25rem);
+				max-height: 100px;
+			}
+			input, textarea {
+				border: 2px solid $darkGrey;
+				padding: 1rem 0.5rem;
+				margin-bottom: 1rem;
+			}
+			#captcha {
+				margin: 0 0 1rem 0;
+			}
+			button {
+				background: black;
+				color: white;
+				padding: 1.5rem;
+				font-weight: 500;
+				cursor: pointer;
+				border-radius: 4px;
+			}
+		}
+  }
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.7;
+  }
+	&.active {
+		opacity: 1;
+		z-index: 1000;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.about {
+		main {
+			.content {
+				padding: calc(4vw * 6) calc(4vw * 2);
+				flex-direction: column;
+				.row {
+					width: 100%;
+					padding: 1.5rem 0;
+					.skills {
+						margin-bottom: 3rem;
+					}
+				}
+				.profile-contact {
+					width: 100%;
+					justify-content: flex-start;
+					align-items: flex-start;
+					ul {
+						margin-right: 0;
+						li {
+							span {
+								opacity: 1;
+								width: 25px;
+							}
+							i {
+								opacity: 1;
+								transform: initial;
+							}
+						}
+					}
+				}
+				.row:nth-of-type(2) {
+					.social {
+						width: 100%;
+					}
+					.skills {
+						width: 100%;
+					}
+				}
+			}
+    }
+    #modal {
+      .content {
+        max-width: calc(100% - 2rem);
+        padding: 1rem;
+      }
+    }
+	}
+}

@@ -111,7 +111,7 @@
 		opacity: 1
 	}
 	&__menu, &__menu_active {
-		background: white;
+		background: #f0f0f0;
 		max-width: 500px;
 		width: 100%;
 		height: 100%;
@@ -182,7 +182,7 @@
 			left: 0;
 			width: 100%;
 			height: 80px;
-			border-top: 1px solid #ebebeb;
+			border-top: 1px solid rgba(0, 0, 0, 0.2);
 			display: flex;
       align-items: center;
       justify-content: space-between;
@@ -201,7 +201,7 @@
 				}
       }
       p {
-        font-size: 0.725rem;
+        font-size: 0.825rem;
       }
 		}
 	}

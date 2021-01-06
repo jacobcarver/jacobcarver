@@ -42,7 +42,7 @@ const Background = () => {
 						}
 					},
 					"line_linked": {
-						"distance": 150,
+						"distance": 100,
 						"enable": true,
 						"color": '#fff',
 						"opacity": 0.6

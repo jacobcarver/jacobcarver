@@ -12,10 +12,7 @@ const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
   const afterLoad = num => {
     TweenLite.to(images.current[num], 1, {
       opacity: 1,
-      ease: Power2.easeInOut,
-      onComplete: () => {
-        console.log(`image ${num} loaded`)
-      }
+      ease: Power2.easeInOut
     })
   }
   useEffect(() => {

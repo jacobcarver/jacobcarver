@@ -11,7 +11,7 @@ const projects = [
     title: 'Dashboard',
 		images: getProjectImages('dashboard'),
     link_local: '/project/dashboard',
-		link_code: 'https://github.com/JacobCode/dashboard2.0',
+		link_code: 'https://github.com/jacobcarver/dashboard2.0',
 		link_site: 'https://modern-dashboard.netlify.app/',
     colors: ['#FFFFFF', '#F5F5F5', '#545454', '#FE9A1B', '#2196F3'],
     placeholderColor: ['#ffbc66'],
@@ -47,7 +47,7 @@ const projects = [
     title: 'Movie Pro',
 		images: getProjectImages('movie'),
     link_local: '/project/movie',
-    link_code: 'https://github.com/JacobCode/movie-site2.0',
+    link_code: 'https://github.com/jacobcarver/movie-site2.0',
 		link_site: 'https://movie-pro.netlify.app/',
     colors: ["#FFFFFF", "#E32F7A", "#7135F2", "#1B1159", "#080327"],
     placeholderColor: ['#db97b4'],
@@ -63,7 +63,7 @@ const projects = [
     title: 'Just Bank',
 		images: getProjectImages('bank'),
     link_local: '/project/bank',
-    link_code: 'https://github.com/JacobCode/bank-page',
+    link_code: 'https://github.com/jacobcarver/bank-page',
 		link_site: 'https://just-bank.netlify.app/',
     colors: ['#FFFFFF', '#F4F7FF', '#1D1C5E', '#7276D9', '#1598D5'],
     placeholderColor: ['#b6c6f0'],
@@ -76,7 +76,7 @@ const projects = [
     title: 'Shoe Store',
 		images: getProjectImages('store'),
     link_local: '/project/store',
-    link_code: 'https://github.com/JacobCode/shoe-store',
+    link_code: 'https://github.com/jacobcarver/shoe-store',
 		link_site: 'https://shoe-store.netlify.app/',
     colors: ['#FFFFFF', '#3567ed', '#f2262c', '#F96D23', '#313131'],
     placeholderColor: ['#6f90e8'],
@@ -92,15 +92,15 @@ const projects = [
     title: 'Realtor',
 		images: getProjectImages('realtor'),
     link_local: '/project/realtor',
-    link_code: 'https://admiring-lamarr-e6b0ae.netlify.app/',
-		link_site: 'https://admiring-lamarr-e6b0ae.netlify.app/',
+    link_code: 'https://github.com/jacobcarver/property-page',
+		link_site: 'https://jacobcarver.github.io/property-page/',
     colors: ['#7BCB33', '#EDE356', '#1b1b1b', '#5c5c5c', '#d8d8d8'],
     placeholderColor: ['#9bcc6e'],
 		tech_front: ['HTML', 'SCSS', 'Javascript'],
 		tech_back: [],
 		tech_other: [],
 		desc: [
-			`Realtor Project Description`
+			`The real estate page was designed by GoldenLayers in photoshop and built by me using HTML, SCSS, and Javascript. It is fully responsive and includes multiple sections such as a gallery, property features, and more.`
 		]
   }
 ];

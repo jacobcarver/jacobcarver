@@ -1,12 +1,29 @@
+import { useEffect, useRef } from 'react';
+import { TweenLite, Power2 } from 'gsap';
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 import './project.scss';
 
 // Components
+import SEO from '../../components/seo';
 import NextProject from '../../components/next-project';
 
 const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
+  let images = useRef([]);
+  const afterLoad = num => {
+    TweenLite.to(images.current[num], 1, {
+      opacity: 1,
+      ease: Power2.easeInOut,
+      onComplete: () => {
+        console.log(`image ${num} loaded`)
+      }
+    })
+  }
+  useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<div id="project-page">
+      <SEO title={`Jacob Carver | ${project.title}`} />
 			<section>
 				<main>
 					<div className="project-technology">
@@ -50,7 +67,7 @@ const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
 						<div className="inner">
 							{project.images.slice(0, 4).map((image, num) => {
 								return (
-									<div className="row" key={num}>
+									<div className="row" ref={el => images.current[num] = el} key={num}>
 										<div className="image-container" style={{backgroundColor: project.placeholderColor}}>
                       <LazyLoadImage
                         alt={`${image}`}
@@ -58,8 +75,8 @@ const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
                         src={image}
                         height="100%"
                         width="100%"
-                        effect="blur"
-                        threshold={0} />
+                        threshold={0}
+                        afterLoad={() => afterLoad(num)} />
 										</div>
                     <p>Desktop Preview - {num + 1}</p>
 									</div>
@@ -83,7 +100,7 @@ const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
 							<div className="boxes">
 								{project.images.slice(4).map((image, num) => {
 									return (
-										<div className="image-box" key={num}>
+										<div className="image-box" ref={el => images.current[num + 4] = el} key={num}>
 											<div className="box" style={{backgroundColor: project.placeholderColor}}>
                         <LazyLoadImage
                           alt={`${image}`}
@@ -91,8 +108,8 @@ const ProjectPage = ({ setIndex, i, history, project, scrollPosition }) => {
                           src={image}
                           height="100%"
                           width="100%"
-                          effect="blur"
-                          threshold={0} />
+                          threshold={0}
+                          afterLoad={() => afterLoad(num + 4)} />
 											</div>
                       <p>Mobile Preview - {num + 1}</p>
 										</div>

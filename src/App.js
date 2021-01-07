@@ -16,6 +16,7 @@ import ProjectCounter from './components/project-counter';
 import ProjectToggler from './components/project-toggler';
 import SeeMore from './components/see-more';
 import Background from './components/background';
+import SEO from './components/seo';
 
 const App = ({ history }) => {
   const [activeProjectIndex, setIndex] = useState(routes.indexOf(window.location.pathname) >= 0 ? routes.indexOf(window.location.pathname) : 0);
@@ -25,7 +26,7 @@ const App = ({ history }) => {
   if (isProjectPage || isProjectPage.length > 0) {
 		show = true;
   }
-  if (!routes.includes(path) && !isProjectPage) {
+  if (!routes.includes(path) && isProjectPage.length === 1) {
     show = false;
   }
   return (
@@ -37,7 +38,7 @@ const App = ({ history }) => {
 
       {show && (
         <>
-          <ProjectPreview activeProjectIndex={activeProjectIndex} history={history} />
+          <ProjectPreview activeProjectIndex={activeProjectIndex} setIndex={setIndex} history={history} />
           <ProjectCounter activeProjectIndex={activeProjectIndex} history={history} />
           <ProjectToggler activeProjectIndex={activeProjectIndex} setIndex={setIndex} history={history} />
           <SeeMore activeProjectIndex={activeProjectIndex} href={projects[activeProjectIndex].link_local} link={window.location.pathname === '/'} history={history} />
@@ -46,7 +47,7 @@ const App = ({ history }) => {
 
       {/* Setup Page Routes */}
       <Switch>
-        <Route path="/" render={() => <></>} exact />
+        <Route path="/" render={() => <><SEO title="Jacob Carver" /></>} exact />
         <Route path="/about" component={About} exact />
         <Route path="/blog" component={Blog} exact />
         {projects.map((project, i) => {

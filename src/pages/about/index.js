@@ -2,6 +2,7 @@ import { useState, useReducer, useEffect, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import axios from 'axios';
 import { TweenMax, TweenLite, Power1, Power3 } from 'gsap';
+import SEO from '../../components/seo';
 import validator from 'email-validator';
 import close from '../../images/close.svg';
 import loadingImage from '../../images/spinner.svg';
@@ -91,6 +92,7 @@ export default function About() {
 	}, [])
 	return (
 		<div className="about">
+      <SEO title="Jacob Carver" />
 			<main>
 				<div className="content">
 					<div ref={el => row.current[0] = el} className="row">

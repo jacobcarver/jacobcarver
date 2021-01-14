@@ -93,14 +93,24 @@
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						margin-right: 2rem;
+            margin-right: 2rem;
+            transition: all 0.4s ease-in-out;
 						svg {
 							width: 30px;
 							height: 30px;
 							path {
-								fill: white;
+                fill: white;
+                transition: all 0.4s ease-in-out;
 							}
-						}
+            }
+            &:hover {
+              background: white;
+              svg {
+                path {
+                  fill: black;
+                }
+              }
+            }
 					}
 					ul {
 						margin-bottom: 1rem;

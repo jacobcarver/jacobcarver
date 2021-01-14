@@ -9,6 +9,7 @@ import Project from './pages/project';
 import Error from './pages/error';
 
 // Components
+import Loader from './components/loader';
 import Nav from './components/nav';
 import ProgressCircle from './components/progress-circle';
 import ProjectPreview from './components/project-preview';
@@ -20,6 +21,7 @@ import SEO from './components/seo';
 
 const App = ({ history }) => {
   const [activeProjectIndex, setIndex] = useState(routes.indexOf(window.location.pathname) >= 0 ? routes.indexOf(window.location.pathname) : 0);
+  const [loading, setLoading] = useState(true)
   let path = window.location.pathname;
   let isProjectPage = path.match(/project/g) || path.length === 1;
   let show;
@@ -29,9 +31,17 @@ const App = ({ history }) => {
   if (!routes.includes(path) && isProjectPage.length === 1) {
     show = false;
   }
+
+  useState(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     (history !== undefined) ? 
     <>
+      <Loader loading={loading} />
+
       <Nav setIndex={setIndex} history={history} />
       <ProgressCircle activeProjectIndex={activeProjectIndex} setIndex={setIndex} history={history} />
       <Background />

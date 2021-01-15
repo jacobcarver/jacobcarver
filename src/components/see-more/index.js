@@ -3,7 +3,7 @@ import { TweenMax, Power3, TweenLite } from 'gsap';
 import { Link } from 'react-router-dom';
 import styles from './see-more.module.scss';
 
-export default function SeeMore({ href, activeProjectIndex, link, history }) {
+export default function SeeMore({ href, activeProjectIndex, link, loading, history }) {
   const linkLetters = useRef([]);
   const textLetters = useRef([]);
   let indicator = useRef(null);
@@ -82,6 +82,7 @@ export default function SeeMore({ href, activeProjectIndex, link, history }) {
         }, 1400);
       })
     } else {
+      clearInterval(timer);
       TweenLite.to(indicatorContainer, 0.5, {
         opacity: '0',
         ease: Power3.easeInOut,
@@ -97,7 +98,7 @@ export default function SeeMore({ href, activeProjectIndex, link, history }) {
     return () => {
       clearInterval(timer);
     }
-  }, [history.location.pathname]);
+  }, [history.location.pathname, loading]);
   return (
     <div className={styles.more} style={{position: link ? 'fixed' : 'absolute'}}>
 			{link && 

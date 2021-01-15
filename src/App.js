@@ -51,7 +51,7 @@ const App = ({ history }) => {
           <ProjectPreview activeProjectIndex={activeProjectIndex} setIndex={setIndex} history={history} />
           <ProjectCounter activeProjectIndex={activeProjectIndex} history={history} />
           <ProjectToggler activeProjectIndex={activeProjectIndex} setIndex={setIndex} history={history} />
-          <SeeMore activeProjectIndex={activeProjectIndex} href={projects[activeProjectIndex].link_local} link={window.location.pathname === '/'} history={history} />
+          <SeeMore activeProjectIndex={activeProjectIndex} href={projects[activeProjectIndex].link_local} link={window.location.pathname === '/'} loading={loading} history={history} />
         </>
       )}
 

@@ -7,7 +7,7 @@ export default function ProjectToggler({ activeProjectIndex, setIndex, history }
   const [time, setTime] = useState(0);
   let toggler = useRef(null);
 	function throttle(fn) {
-		if ((time + 1000 - Date.now()) < 0) {
+		if ((time + 1250 - Date.now()) < 0) {
 			fn();
 			setTime(Date.now());
 		}
